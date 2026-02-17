@@ -6,11 +6,13 @@ This repository uses a comprehensive knowledge management structure designed to 
 
 ## Start Here
 
-**New to this project?** � Read the [Master Project Index](00-PROJECT-INDEX.md)
+**New to this project?** Read the [Master Project Index](00-PROJECT-INDEX.md)
 
-**Looking for specific information?** � Use the quick links below
+**Looking for specific information?** Use the quick links below
 
-**Want to add documentation?** � Check the [templates](#templates) section
+**Want to set up your own instance?** See the [Setup Guide](SETUP.md)
+
+**Want to contribute?** Check the [Contributing Guide](CONTRIBUTING.md)
 
 ## Quick Navigation
 
@@ -24,6 +26,8 @@ This repository uses a comprehensive knowledge management structure designed to 
 
 - [Project Charter](01-foundation/project-charter.md) - Project purpose and authority
 - [Objectives & Scope](01-foundation/objectives-and-scope.md) - What we're building
+- [Stakeholders](01-foundation/stakeholders.md) - Who's involved and their roles
+- [Constraints & Assumptions](01-foundation/constraints-and-assumptions.md) - Project boundaries
 - [Glossary](01-foundation/glossary.md) - Project terminology
 
 ### Decisions & Knowledge
@@ -41,64 +45,65 @@ This repository uses a comprehensive knowledge management structure designed to 
 
 ```
 project-root/
-
-
-   
-   
-
-
-
-   00-inbox/                        # Completed documents ready for processing
-      review-needed/               # Flagged for human review
-
-   00-wip/                          # Work in progress - drafts being edited
-
-
-
-   
-   
-   
-   
-   
-
-
-   
-   
-   
-
-
-   
-   
-   
-   
-
-
-   
-      
-      
-      
-   
-      
-      
-      
-   
-       
-       
-
-
-   
-   
-
-
-   
-   
-   
-
-
-   
-   
-
-
+├── 00-PROJECT-INDEX.md              # Central navigation hub
+├── 00-inbox/                        # Completed documents ready for processing
+│   └── review-needed/               # Flagged for human review
+├── 00-wip/                          # Work in progress - drafts being edited
+├── 01-foundation/                   # Project charter, glossary, scope
+│   ├── _index.md
+│   ├── project-charter.md
+│   ├── objectives-and-scope.md
+│   ├── glossary.md
+│   ├── stakeholders.md
+│   └── constraints-and-assumptions.md
+├── 02-decisions/                    # Architecture Decision Records (ADRs)
+│   ├── _decisions-index.md
+│   ├── _template-decision.md
+│   └── YYYY-MM-DD-decision-*.md
+├── 03-active-work/                  # Current status, priorities, blockers
+│   ├── _current-status.md
+│   ├── priorities.md
+│   └── blockers-and-risks.md
+├── 04-knowledge-base/               # Organized knowledge
+│   ├── _index.md
+│   ├── business/                    # Product & business docs
+│   │   ├── _index.md
+│   │   ├── requirements/            # Feature specs, PRDs, user stories
+│   │   ├── user-research/           # User interviews, surveys, feedback
+│   │   └── market-analysis/         # Competitive analysis, market data
+│   ├── technical/                   # Technical documentation
+│   │   ├── _index.md
+│   │   ├── architecture/
+│   │   ├── apis-and-integrations/
+│   │   └── infrastructure/
+│   └── operational/                 # Processes and runbooks
+│       ├── _index.md
+│       ├── processes/
+│       └── runbooks/
+├── 05-research/                     # Research and investigations
+│   ├── _research-index.md
+│   └── _template-research.md
+├── 06-meetings/                     # Meeting notes by month
+│   ├── _meetings-index.md
+│   ├── _template-meeting.md
+│   └── YYYY-MM/                     # Organized by month
+├── 07-archive/                      # Archived content by quarter
+│   ├── _archive-log.md
+│   └── YYYY-QX/
+├── .claude/                         # Claude Code configuration
+│   ├── commands/                    # Slash commands
+│   ├── instructions.md
+│   └── maintenance-guide.md
+├── .github/                         # GitHub templates and configuration
+│   ├── ISSUE_TEMPLATE/              # Bug report, feature request, docs improvement
+│   ├── PULL_REQUEST_TEMPLATE.md
+│   └── SECURITY.md
+├── logs/                            # Maintenance and processing logs
+├── CLAUDE.md                        # AI assistant instructions
+├── CONTRIBUTING.md                  # Contribution guidelines
+├── LICENSE                          # MIT License
+├── SETUP.md                         # Setup guide for new instances
+└── README.md                        # This file
 ```
 
 ## Key Principles
@@ -244,7 +249,7 @@ This knowledge base includes powerful automation through slash commands:
   - **Timeframes:** `1d`, `5d`, `15d`, `30d`, or `all`
   - **No parameter:** Interactive selection
   - **What it does:**
-    - Processes new documents from parse folder
+    - Processes new documents from inbox
     - Validates document quality (metadata, structure, links)
     - **Cross-references documents** (finds missing links and decisions)
     - Updates all indexes automatically
@@ -270,6 +275,8 @@ This knowledge base works with multiple AI coding assistants:
 - **Windsurf** - Uses `.windsurfrules` (symlink to CLAUDE.md)
 - **Continue** - Uses `.continue/instructions.md` (symlink to CLAUDE.md)
 - **Gemini** - Uses `.gemini/instructions.md` (symlink to CLAUDE.md)
+
+A root-level `instructions.md` symlink is also provided for generic tool compatibility.
 
 All tools share the same instructions, ensuring consistent behavior across your team's preferred AI assistants.
 
@@ -360,13 +367,20 @@ See the [Maintenance Guide](.claude/maintenance-guide.md) for details.
 
 ## Contributing
 
-### File Naming
+We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on:
+
+- Reporting issues and requesting features
+- Submitting changes via pull request
+- Document standards and naming conventions
+- Code of conduct
+
+## File Naming Conventions
 
 - Use lowercase with hyphens: `my-document-name.md`
 - Date prefix for chronological items: `YYYY-MM-DD-title.md`
 - Underscore prefix for special files: `_index.md`, `_template.md`
 
-### Document Structure
+## Document Structure
 
 1. YAML frontmatter with metadata
 2. Clear title (H1)
@@ -374,19 +388,19 @@ See the [Maintenance Guide](.claude/maintenance-guide.md) for details.
 4. Links to related documents
 5. Update date when modified
 
-### Cross-Referencing
+## Cross-Referencing
 
 - Use relative paths
-- Link bidirectionally (A�B and B�A)
+- Link bidirectionally (A links to B and B links to A)
 - Keep "Related Documents" sections updated
 
 ## License
 
-[Add your license here]
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
-Lucas Cufré - hello@lucascufre.design
+Lucas Cufre - hello@lucascufre.design
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub Stars](https://img.shields.io/github/stars/LucasCufre/llm-knowledge-base?style=social)](https://github.com/LucasCufre/llm-knowledge-base/stargazers)
@@ -395,6 +409,6 @@ Lucas Cufré - hello@lucascufre.design
 
 ---
 
-**Last Updated:** 2025-10-17
+**Last Updated:** 2026-02-17
 
 **Ready to get started?** Head to the [Master Project Index](00-PROJECT-INDEX.md) to begin exploring the project knowledge base.

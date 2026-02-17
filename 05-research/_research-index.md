@@ -2,7 +2,7 @@
 title: Research Index
 type: index
 date: 2025-10-17
-last-updated: 2025-10-17
+last-updated: 2025-11-15
 status: active
 summary: |
   Index of all research activities including technical spikes, market research,
@@ -15,33 +15,26 @@ This directory contains research conducted to inform project decisions.
 
 ## Active Research
 
-| Title | Type | Researcher | Started | Status |
-|-------|------|-----------|---------|--------|
-| [Research Topic](_template-research.md) | Technical | [Name] | YYYY-MM-DD | In Progress |
+*No active research at this time.*
 
 ## Completed Research
 
 | Title | Type | Researcher | Completed | Key Findings |
 |-------|------|-----------|-----------|--------------|
-| [Research Topic](YYYY-MM-DD-research-title.md) | Market | [Name] | YYYY-MM-DD | [Brief summary] |
+| [Authorization Framework Comparison](example-authorization-framework-comparison.md) | Technical | James Park | 2025-11-06 | Casbin recommended for RBAC flexibility and PostgreSQL adapter |
+| [Real-Time Architecture Options](example-real-time-architecture-options.md) | Technical | Maria Chen | 2025-11-12 | WebSockets recommended for bidirectional comms and low latency |
 
 ## Research by Type
 
 ### Technical Research
-- Proof of concepts
-- Technology evaluations
-- Performance studies
-- Feasibility analysis
+- [Authorization Framework Comparison](example-authorization-framework-comparison.md) - Casbin vs. CASL vs. OPA
+- [Real-Time Architecture Options](example-real-time-architecture-options.md) - WebSockets vs. SSE vs. long polling
 
 ### Market Research
-- Competitive analysis
-- Industry trends
-- Market opportunities
+*See [Market Analysis](../04-knowledge-base/business/market-analysis/) for market-specific research.*
 
 ### User Research
-- User needs assessment
-- Usability studies
-- User interviews
+*See [User Research](../04-knowledge-base/business/user-research/) for user-specific research.*
 
 ## Template
 Use [_template-research.md](_template-research.md) to create new research documents.

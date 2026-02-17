@@ -2,7 +2,7 @@
 title: Operational Knowledge Index
 type: index
 date: 2025-10-17
-last-updated: 2025-10-17
+last-updated: 2025-11-15
 status: active
 summary: |
   Index of operational documentation including processes and runbooks.
@@ -12,18 +12,14 @@ summary: |
 
 ## [Processes](processes/)
 Team processes, workflows, and ceremonies
-- Development workflow
-- Code review process
-- Release process
-- Sprint ceremonies
-- Team agreements
-- Definition of done
+
+- [Sprint Planning Process](processes/example-sprint-planning-process.md) - Weekly sprint planning ceremony and capacity planning
+- [Code Review Process](processes/example-code-review-process.md) - PR requirements, review SLAs, and merge rules
+- Template: [_template-process.md](processes/_template-process.md)
 
 ## [Runbooks](runbooks/)
 Operational procedures and troubleshooting guides
-- Incident response procedures
-- Troubleshooting guides
-- Deployment runbooks
-- Rollback procedures
-- System maintenance
-- On-call procedures
+
+- [Production Incident Response](runbooks/example-production-incident-response-runbook.md) - General incident triage, communication, and resolution
+- [Database Connection Pool Exhaustion](runbooks/example-database-connection-pool-exhaustion-runbook.md) - PostgreSQL/PgBouncer connection issues
+- Template: [_template-runbook.md](runbooks/_template-runbook.md)
