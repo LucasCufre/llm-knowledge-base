@@ -12,6 +12,7 @@ Thumbs.db
 00-inbox/**
 !00-inbox/README.md
 !00-inbox/.gitkeep
+GITHUB-REPOSITORY-SETTINGS.md
 
 00-wip/**
 !00-wip/README.md
