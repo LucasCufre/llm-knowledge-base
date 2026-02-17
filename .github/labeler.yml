@@ -1,0 +1,43 @@
+foundation:
+  - changed-files:
+      - any-glob-to-any-file: "01-foundation/**"
+
+decisions:
+  - changed-files:
+      - any-glob-to-any-file: "02-decisions/**"
+
+active-work:
+  - changed-files:
+      - any-glob-to-any-file: "03-active-work/**"
+
+business:
+  - changed-files:
+      - any-glob-to-any-file: "04-knowledge-base/business/**"
+
+technical:
+  - changed-files:
+      - any-glob-to-any-file: "04-knowledge-base/technical/**"
+
+operational:
+  - changed-files:
+      - any-glob-to-any-file: "04-knowledge-base/operational/**"
+
+research:
+  - changed-files:
+      - any-glob-to-any-file: "05-research/**"
+
+meetings:
+  - changed-files:
+      - any-glob-to-any-file: "06-meetings/**"
+
+ci:
+  - changed-files:
+      - any-glob-to-any-file: ".github/**"
+
+documentation:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "README.md"
+          - "CONTRIBUTING.md"
+          - "CLAUDE.md"
+          - "LICENSE"

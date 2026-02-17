@@ -3,6 +3,7 @@
 This document provides step-by-step instructions for configuring your GitHub repository settings to match the recommended setup for this open-source knowledge base template.
 
 ## Repository URL
+
 https://github.com/LucasCufre/llm-knowledge-base
 
 ## Settings Checklist
@@ -30,6 +31,7 @@ Navigate to: **Settings** → **General**
 #### Features
 
 Enable these features:
+
 - [ ] ✅ **Issues** - For bug reports and feature requests
 - [ ] ✅ **Discussions** - For community Q&A and general discussions
 - [ ] ❌ **Wikis** - Disabled (documentation is in the repo)
@@ -255,6 +257,7 @@ Please do not open public issues for security vulnerabilities.
 ## Scope
 
 This is a documentation template. Security concerns might include:
+
 - Injection vulnerabilities in automation scripts
 - Sensitive data exposure in templates or examples
 - Malicious code in suggested workflows
@@ -277,20 +280,20 @@ name: Check Markdown Links
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
   schedule:
-    - cron: '0 0 * * 0'  # Weekly on Sunday
+    - cron: "0 0 * * 0" # Weekly on Sunday
 
 jobs:
   markdown-link-check:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: gaurav-nelson/github-action-markdown-link-check@v1
-      with:
-        config-file: '.github/markdown-link-check-config.json'
+      - uses: actions/checkout@v3
+      - uses: gaurav-nelson/github-action-markdown-link-check@v1
+        with:
+          config-file: ".github/markdown-link-check-config.json"
 ```
 
 Create config: `.github/markdown-link-check-config.json`
@@ -326,6 +329,7 @@ Add badges to top of README.md:
 ### Social Preview Image (Optional)
 
 Create a social preview image (1280x640px) showing:
+
 - Repository name
 - Key features
 - Visual of directory structure
@@ -360,12 +364,14 @@ The first stable release of the LLM-optimized knowledge base template!
 ### 📦 What's Included
 
 **Slash Commands:**
+
 - `/query` - Comprehensive research with cited sources
 - `/update` - Update outdated documentation
 - `/maintenance` - Run maintenance workflows
 - `/prd-bot` - Generate PRDs and user stories
 
 **Directory Structure:**
+
 - `00-inbox/` - Drop zone for automatic processing
 - `01-foundation/` - Project charter and glossary
 - `02-decisions/` - Architecture Decision Records
@@ -398,7 +404,7 @@ Built with Claude Sonnet 4.5 to make project knowledge management easy and AI-ac
 **Ready to organize your project knowledge?** Click "Use this template" above to get started!
 ```
 
-- [ ] **Set as latest release**: ✅ Yes
+- [x] **Set as latest release**: ✅ Yes
 - [ ] **Pre-release**: ❌ No
 
 ## Post-Configuration Checklist
