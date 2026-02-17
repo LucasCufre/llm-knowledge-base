@@ -2,7 +2,7 @@
 title: Knowledge Base Maintenance Guide
 type: operational-guide
 date: 2025-10-17
-last-updated: 2025-10-17
+last-updated: 2026-02-17
 status: active
 owner: Project Team
 summary: |
@@ -420,7 +420,7 @@ Use consistent status values:
 ## Automation Opportunities
 
 Consider automating these tasks:
-- **Link checking:** CI/CD pipeline can check for broken links
+- **Link checking:** Use `/maintenance` command or VS Code Markdown Link Checker
 - **Metadata validation:** Script to verify all docs have required fields
 - **Index generation:** Auto-generate parts of index files from metadata
 - **Stale content alerts:** Notify owners when docs haven't been updated in X days

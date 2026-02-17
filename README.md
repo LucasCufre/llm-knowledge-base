@@ -99,7 +99,7 @@ project-root/
 │   ├── commands/                    # Slash commands
 │   ├── instructions.md
 │   └── maintenance-guide.md
-├── .github/                         # GitHub templates and configuration
+├── .github/                         # GitHub templates
 │   ├── ISSUE_TEMPLATE/              # Bug report, feature request, docs improvement
 │   ├── PULL_REQUEST_TEMPLATE.md
 │   └── SECURITY.md

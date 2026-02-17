@@ -95,10 +95,6 @@ When contributing slash commands (`.claude/commands/`):
 Before submitting:
 
 1. **Validate Markdown**: Ensure proper formatting
-   ```bash
-   # Check for broken links (if you have a link checker)
-   markdown-link-check **/*.md
-   ```
 
 2. **Check Metadata**: All required fields present
    ```bash
