@@ -1,0 +1,354 @@
+# Project Knowledge Base
+
+**A structured, LLM-optimized project documentation system**
+
+This repository uses a comprehensive knowledge management structure designed to make all project information easily discoverable by both humans and AI assistants like Claude Code.
+
+## Start Here
+
+**New to this project?** � Read the [Master Project Index](00-PROJECT-INDEX.md)
+
+**Looking for specific information?** � Use the quick links below
+
+**Want to add documentation?** � Check the [templates](#templates) section
+
+## Quick Navigation
+
+### Current Project State
+- [Current Status](03-active-work/_current-status.md) - Weekly project status updates
+- [Priorities](03-active-work/priorities.md) - What we're working on now
+- [Blockers & Risks](03-active-work/blockers-and-risks.md) - Current issues and risks
+
+### Foundation
+- [Project Charter](01-foundation/project-charter.md) - Project purpose and authority
+- [Objectives & Scope](01-foundation/objectives-and-scope.md) - What we're building
+- [Glossary](01-foundation/glossary.md) - Project terminology
+
+### Decisions & Knowledge
+- [Decision Records](02-decisions/_decisions-index.md) - All project decisions
+- [Knowledge Base](04-knowledge-base/_index.md) - Technical, business, and operational docs
+- [Research](05-research/_research-index.md) - Research and investigations
+
+### Content Processing
+- [Inbox](00-inbox/) - Drop completed documents here for automatic processing
+- [Work in Progress](00-wip/) - Draft and edit documents before they're ready for processing
+
+## Directory Structure
+
+```
+project-root/
+
+
+   
+   
+
+
+
+   00-inbox/                        # Completed documents ready for processing
+      review-needed/               # Flagged for human review
+
+   00-wip/                          # Work in progress - drafts being edited
+
+
+
+   
+   
+   
+   
+   
+
+
+   
+   
+   
+
+
+   
+   
+   
+   
+
+
+   
+      
+      
+      
+   
+      
+      
+      
+   
+       
+       
+
+
+   
+   
+
+
+   
+   
+   
+
+
+   
+   
+
+
+```
+
+## Key Principles
+
+### 1. Everything Has Metadata
+All documents include YAML frontmatter with:
+- Title, type, date, status
+- Summary for quick context
+- Tags for discoverability
+- Related documents for navigation
+
+### 2. Decisions Are Documented
+Significant decisions use the Architecture Decision Record (ADR) format to capture:
+- What was decided
+- Why it was decided
+- What alternatives were considered
+- What the implications are
+
+### 3. Status Is Current
+Active work documents are updated regularly:
+- Status reports: Weekly
+- Priorities: As needed
+- Blockers: Daily
+
+### 4. Knowledge Is Linked
+Documents reference each other creating a web of knowledge:
+- Decisions link to requirements
+- Status updates link to decisions
+- Meeting notes link to action items
+
+### 5. Old Content Is Archived
+Outdated content is moved to the archive but kept for historical reference:
+- Maintains clean active directories
+- Preserves institutional knowledge
+- Enables historical research
+
+## Templates
+
+Use these templates to create new content:
+
+### Core Templates
+- **Decision Record:** [02-decisions/_template-decision.md](02-decisions/_template-decision.md)
+- **Meeting Notes:** [06-meetings/_template-meeting.md](06-meetings/_template-meeting.md)
+
+### Business/Product Templates
+- **Requirement (PRD):** [04-knowledge-base/business/requirements/_template-requirement.md](04-knowledge-base/business/requirements/_template-requirement.md)
+  - 4-section structure: Executive Summary, Technical Considerations, Acceptance Criteria, Permissions
+- **User Research:** [04-knowledge-base/business/user-research/_template-user-research.md](04-knowledge-base/business/user-research/_template-user-research.md)
+- **Market Analysis:** [04-knowledge-base/business/market-analysis/_template-market-analysis.md](04-knowledge-base/business/market-analysis/_template-market-analysis.md)
+
+### Technical Templates
+- **Architecture Doc:** [04-knowledge-base/technical/architecture/_template-architecture-doc.md](04-knowledge-base/technical/architecture/_template-architecture-doc.md)
+
+### Operational Templates
+- **Process Documentation:** [04-knowledge-base/operational/processes/_template-process.md](04-knowledge-base/operational/processes/_template-process.md)
+- **Runbook:** [04-knowledge-base/operational/runbooks/_template-runbook.md](04-knowledge-base/operational/runbooks/_template-runbook.md)
+
+## For Team Members
+
+### Adding a Decision
+1. Copy the [decision template](02-decisions/_template-decision.md)
+2. Name it: `YYYY-MM-DD-decision-title.md`
+3. Fill out all sections
+4. Update the [decisions index](02-decisions/_decisions-index.md)
+
+See [detailed instructions](02-decisions/README.md).
+
+### Documenting a Meeting
+1. Copy the [meeting template](06-meetings/_template-meeting.md)
+2. Name it: `YYYY-MM-DD-meeting-title.md`
+3. Document within 24 hours
+4. Extract decisions to ADRs
+5. Update the [meetings index](06-meetings/_meetings-index.md)
+
+See [detailed instructions](06-meetings/README.md).
+
+### Updating Status
+1. Update [_current-status.md](03-active-work/_current-status.md) weekly
+2. Review and update [priorities](03-active-work/priorities.md)
+3. Update [blockers and risks](03-active-work/blockers-and-risks.md)
+
+See [detailed instructions](03-active-work/README.md).
+
+### Adding Unstructured Content
+Have raw meeting notes, email threads, or research findings? Don't spend time formatting:
+
+1. **Drop files** in [00-inbox/](00-inbox/)
+2. **Claude Code automatically:**
+   - Analyzes the content
+   - Extracts key information (dates, people, decisions, actions)
+   - Creates properly formatted documents
+   - Updates all relevant indexes
+   - Deletes the original file after processing
+
+**What you can drop:**
+- Meeting transcripts or notes
+- Email threads
+- Chat logs (Slack, Teams)
+- Research findings
+- Requirements drafts
+- Technical documentation
+- Any text-based project content
+
+See [Documents to Parse README](00-inbox/README.md) for examples and best practices.
+
+## Automated Workflows (Slash Commands)
+
+This knowledge base includes powerful automation through slash commands:
+
+### Query & Research
+- `/query [question]` - Comprehensive research with cited sources
+- `/quick-query [question]` - Fast factual lookups
+
+### Documentation Management
+- `/update` - Analyze conversation and update outdated docs
+- `/prd-bot` - Transform vague ideas into development-ready PRDs and User Stories
+- `/standup-tldr` - Generate executive summaries of daily standups
+
+### Maintenance
+- `/maintenance [timeframe]` - Unified maintenance workflow
+  - **Timeframes:** `1d`, `5d`, `15d`, `30d`, or `all`
+  - **No parameter:** Interactive selection
+  - **What it does:**
+    - Processes new documents from parse folder
+    - Validates document quality (metadata, structure, links)
+    - **Cross-references documents** (finds missing links and decisions)
+    - Updates all indexes automatically
+    - Detects duplicates and orphaned content
+    - Identifies stale content (30d/all only)
+  - **Examples:**
+    - `/maintenance 1d` - Quick daily check (~5-8 min)
+    - `/maintenance 5d` - Weekly review (~10-15 min)
+    - `/maintenance 30d` - Monthly deep dive (~25-40 min)
+    - `/maintenance status` - Quick health check only
+
+### How to Use
+Simply type the command in Claude Code (e.g., `/query What are our requirements for user authentication?`)
+
+## Cross-Tool Compatibility
+
+This knowledge base works with multiple AI coding assistants:
+
+- **Claude Code** - Uses `CLAUDE.md`
+- **Cursor** - Uses `.cursorrules` (symlink to CLAUDE.md)
+- **Cline** - Uses `.clinerules` (symlink to CLAUDE.md)
+- **Windsurf** - Uses `.windsurfrules` (symlink to CLAUDE.md)
+- **Continue** - Uses `.continue/instructions.md` (symlink to CLAUDE.md)
+- **Gemini** - Uses `.gemini/instructions.md` (symlink to CLAUDE.md)
+
+All tools share the same instructions, ensuring consistent behavior across your team's preferred AI assistants.
+
+## For AI Assistants
+
+### Claude Code and Similar Tools
+This knowledge base is optimized for AI assistant discovery:
+
+1. **Start with:** [00-PROJECT-INDEX.md](00-PROJECT-INDEX.md) for navigation
+2. **Read:** [CLAUDE.md](CLAUDE.md) for comprehensive instructions
+3. **Use commands:** Slash commands for common operations
+4. **Prioritize:** Current status and recent decisions
+5. **Use:** Metadata summaries for quick context
+6. **Follow:** Links between related documents
+
+### Context Priority
+When answering questions:
+1. Current status ([03-active-work/](03-active-work/))
+2. Recent decisions ([02-decisions/](02-decisions/))
+3. Foundation docs ([01-foundation/](01-foundation/))
+4. Knowledge base ([04-knowledge-base/](04-knowledge-base/))
+5. Research ([05-research/](05-research/))
+6. Meetings ([06-meetings/](06-meetings/))
+
+## Maintenance
+
+### Weekly Tasks
+- Update current status
+- File new content in appropriate directories
+- Process meeting notes
+
+### Monthly Tasks
+- Update master index
+- Review decision statuses
+- Update glossary
+- Review priorities
+
+### Quarterly Tasks
+- Archive old content
+- Audit structure
+- Review and update processes
+
+See the [Maintenance Guide](.claude/maintenance-guide.md) for details.
+
+## Benefits of This Structure
+
+### For Humans
+- **Easy to navigate:** Clear hierarchy and indexes
+- **Easy to maintain:** Templates and guidelines
+- **Easy to find:** Tags, summaries, and cross-linking
+- **Easy to onboard:** Clear starting points and documentation standards
+
+### For AI Assistants
+- **Semantic search optimized:** Metadata and summaries
+- **Context-rich:** Related documents and cross-linking
+- **Status-aware:** Current vs. historical content clearly marked
+- **Decision-aware:** Rationale and alternatives documented
+
+### For the Project
+- **Institutional knowledge preserved:** Nothing is lost
+- **Context maintained:** Why decisions were made
+- **Onboarding accelerated:** New team members get up to speed quickly
+- **Communication improved:** Single source of truth
+
+## Getting Help
+
+### Documentation Questions
+- Check README files in each directory
+- Review templates for examples
+- Consult the [Maintenance Guide](.claude/maintenance-guide.md)
+
+### Project Questions
+- Start with [00-PROJECT-INDEX.md](00-PROJECT-INDEX.md)
+- Check [Current Status](03-active-work/_current-status.md)
+- Review [Recent Decisions](02-decisions/_decisions-index.md)
+- Contact project lead or stakeholders
+
+## Contributing
+
+### File Naming
+- Use lowercase with hyphens: `my-document-name.md`
+- Date prefix for chronological items: `YYYY-MM-DD-title.md`
+- Underscore prefix for special files: `_index.md`, `_template.md`
+
+### Document Structure
+1. YAML frontmatter with metadata
+2. Clear title (H1)
+3. Sections with headers (H2, H3)
+4. Links to related documents
+5. Update date when modified
+
+### Cross-Referencing
+- Use relative paths
+- Link bidirectionally (A�B and B�A)
+- Keep "Related Documents" sections updated
+
+## License
+
+[Add your license here]
+
+## Contact
+
+[Add contact information here]
+
+---
+
+**Last Updated:** 2025-10-17
+
+**Ready to get started?** Head to the [Master Project Index](00-PROJECT-INDEX.md) to begin exploring the project knowledge base.

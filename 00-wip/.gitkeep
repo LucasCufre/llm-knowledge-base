@@ -1,0 +1,2 @@
+# This file ensures the wip directory exists in git
+# The directory itself is gitignored except for README.md

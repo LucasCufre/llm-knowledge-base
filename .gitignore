@@ -1,0 +1,46 @@
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*~
+
+# User-specific workflow directories
+00-inbox/**
+!00-inbox/README.md
+!00-inbox/.gitkeep
+
+00-wip/**
+!00-wip/README.md
+!00-wip/.gitkeep
+
+logs/**
+!logs/README.md
+!logs/.gitkeep
+
+# Local settings and configurations
+.claude/settings.local.json
+.claude/*.local.json
+*.local.md
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+.project
+.settings/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.log
+
+# Personal notes (optional - remove if you want to track these)
+**/PERSONAL.md
+**/PRIVATE.md
