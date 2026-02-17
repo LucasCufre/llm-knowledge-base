@@ -64,13 +64,35 @@ This system is optimized for Claude Code with built-in slash commands:
 ### Other AI Tools
 
 The system works with:
-- **Cursor** - Uses `.cursorrules` symlink
-- **Cline** - Uses `.clinerules` symlink
-- **Windsurf** - Uses `.windsurfrules` symlink
-- **Continue** - Uses `.continue/instructions.md` symlink
-- **Gemini** - Uses `.gemini/instructions.md` symlink
+- **Cursor** - Uses `.cursorrules`
+- **Cline** - Uses `.clinerules`
+- **Windsurf** - Uses `.windsurfrules`
+- **Continue** - Uses `.continue/instructions.md`
+- **Gemini** - Uses `.gemini/instructions.md`
 
 All tools share the same instructions from [CLAUDE.md](CLAUDE.md).
+
+### Windows Setup
+
+On macOS/Linux, symlinks connect each tool's config file to `CLAUDE.md` automatically. On Windows, git checks out symlinks as plain text files by default, which breaks the tool integrations.
+
+**After cloning on Windows**, run the setup script to create proper file copies:
+
+```powershell
+# PowerShell
+.\scripts\setup-links.ps1
+
+# Or from Git Bash
+bash scripts/setup-links.sh
+```
+
+The script copies `CLAUDE.md` content into each tool's config file. Re-run it whenever you update `CLAUDE.md` to keep everything in sync.
+
+**Alternative**: If you have Windows Developer Mode enabled, you can configure git to create real symlinks:
+```powershell
+git config --global core.symlinks true
+```
+Then re-clone the repository. This avoids needing the setup script entirely.
 
 ## Automated Workflows
 
